@@ -1,5 +1,5 @@
 import React from 'react';
-import { Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-react';
+import { Image, Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-react';
 import { NavLink } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import deepEqual from 'deep-equal';
@@ -9,7 +9,10 @@ import Helmet from 'react-helmet';
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/app.css';
-import logo from './assets/sc_logo.svg';
+import './assets/css/fontawesome.css';
+import './assets/css/tooplate-main.css';
+import './assets/css/owl.css';
+import logo from './assets/images/header-logo.png';
 
 /*
   APP LAYOUT
@@ -22,27 +25,58 @@ import logo from './assets/sc_logo.svg';
 // This is boilerplate navigation for sample purposes. Most apps should throw this away and use their own navigation implementation.
 // Most apps may also wish to use GraphQL for their navigation construction; this sample does not simply to support disconnected mode.
 let Navigation = ({ t, i18n }) => (
-  <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
-    <h5 className="my-0 me-md-auto fw-normal">
-      <NavLink to="/" className="text-dark">
-        <img src={logo} alt="Sitecore" />
-      </NavLink>
-    </h5>
-    <nav className="my-2 my-md-0 me-md-3">
-      <a
-        className="p-2 text-dark"
-        href="https://jss.sitecore.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {t('Documentation')}
-      </a>
-      <NavLink to="/styleguide" className="p-2 text-dark">
-        {t('Styleguide')}
-      </NavLink>
-      <NavLink to="/graphql" className="p-2 text-dark">
-        {t('GraphQL')}
-      </NavLink>
+  <div className="header">
+    <div id="pre-header">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div className="container">
+        <a className="navbar-brand" href="#">
+          <img src={logo}></img>
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="">
+                Home
+                <span className="sr-only">(current)</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="">
+                Products
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="">
+                About Us
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </div>
 );
